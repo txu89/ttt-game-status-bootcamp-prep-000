@@ -15,40 +15,38 @@ WIN_COMBINATIONS = [
   [2,4,6]
 ]
 
- def won?(board)
-    WIN_COMBINATIONS.each { | combination |
-      if (board[combination[0]] == board[combination[1]] && board[combination[1]] == board[combination[2]] && position_taken?(board, combination[0]))
-        return combination
-      end
-    }
-      
-    return FALSE
-  end
-  
-  def full?(board)
-    board.each { | index |
-      if (index == " " || index == nil)
-        return FALSE
-      else
-        TRUE
-      end
-    }
-  end
-  
-  def draw?(board)
-    if (full?(board) && !won?(board))
-      TRUE
-    else
-      FALSE
+def won?(board)
+  WIN_COMBINATIONS.each { | combination |
+    if (board[combination[0]] == board[combination[1]] && board[combination[1]] == board[combination[2]] && position_taken?(board, combination[0]))
+      return combination
     end
-  end
-  
-  def over?(board)
-    if (won?(board) || draw?(board))
-      TRUE
+    
+  return FALSE
+end
+
+def full?(board)
+  board.each { | index |
+    if (index == " " || index == nil)
+      return FALSE
     else
-      FALSE
+      TRUE
     end
+  }
+end
+
+def draw?(board)
+  if (full?(board) && !won?(board))
+    TRUE
+  else
+    FALSE
   end
-  
-  
+end
+
+def over?(board)
+  if (won?(board) || draw?(board))
+    TRUE
+  else
+    FALSE
+  end
+end
+
