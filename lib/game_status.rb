@@ -17,7 +17,7 @@ WIN_COMBINATIONS = [
 
  def won?(board)
    WIN_COMBINATIONS.each { | combination |
-    if (board[combination[0]] == board[combination[1]] && board[combination[1]] == board[combination[2]]) && (position_taken?(board, combination[0])
+    if (board[combination[0]] == board[combination[1]] && board[combination[1]] == board[combination[2]]) && (position_taken?(board, combination[0]))
       return combination
     else
       FALSE
