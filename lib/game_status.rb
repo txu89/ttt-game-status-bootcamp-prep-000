@@ -20,6 +20,7 @@ def won?(board)
     if (board[combination[0]] == board[combination[1]] && board[combination[1]] == board[combination[2]] && position_taken?(board, combination[0]))
       return combination
     end
+  }
     
   return FALSE
 end
